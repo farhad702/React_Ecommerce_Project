@@ -1,0 +1,13 @@
+resources i have used in this project
+
+tailwind css
+
+https://www.npmjs.com/package/json-server-auth
+
+json server
+
+json server auth
+
+for server we run this command
+
+json-server db.json -m ./node_modules/json-server-auth -r routes.json
