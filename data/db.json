@@ -295,6 +295,12 @@
       "password": "$2a$10$ry.a85WeBIwk/yN3qQ33FOEA4hCVR8JYfox1EowAdsGhAXVRsC9z6",
       "name": "cc",
       "id": 3
+    },
+    {
+      "email": "farhad@gmail.com",
+      "password": "$2a$10$xFGheYyYfIn70x/WEJO0O.qfA/J0rAZ2w9EQhKLTDaLluHnTNcO0G",
+      "name": "Farhad",
+      "id": 4
     }
   ]
 }
