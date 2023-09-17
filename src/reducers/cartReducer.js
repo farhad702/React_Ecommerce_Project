@@ -4,16 +4,16 @@
     switch(type){
 
         case "ADD_TO_CART" :
-            return
+            return {...state, cartList: payload.products, total: payload.total}
 
             case "REMOVE_FROM_CART" :
-            return
+            return {...state, cartList: payload.products, total: payload.total}
 
             case "CLEAR_CART":
-            return
+            return {...state, cartList:payload.products, total:payload.total}
             
             case "UPDATE_PRICE":
-                return
+                return 
 
                 default:
                     throw new Error("No case Found !");
