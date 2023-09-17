@@ -11,7 +11,18 @@ export const Header = () => {
 
   // dark mode start //
   const[darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("darkMode")) || false);
+   // Search start
 
+   const [searchSection, setSearchSection] = useState(false);
+
+   // Search End //
+ 
+   // Drop down //
+ 
+   const [dropDown, setDropDown] = useState(false);
+ 
+   // Drop down end //
+   const token = JSON.parse(sessionStorage.getItem("token"));
 
   useEffect(()=>{
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
@@ -24,17 +35,7 @@ export const Header = () => {
 
   // dark mode end //
 
-  // Search start
-
-  const [searchSection, setSearchSection] = useState(false);
-
-  // Search End //
-
-  // Drop down //
-
-  const [dropDown, setDropDown] = useState(false);
-
-  // Drop down end //
+ 
 
   return (
     <header>
@@ -54,7 +55,7 @@ export const Header = () => {
               </span>                    
             </Link>
             <span onClick={()=> setDropDown(!dropDown)} className="bi bi-person-circle cursor-pointer text-2xl text-gray-700 dark:text-white"></span>
-            {dropDown && <DropdownLoggedOut/>}
+            {dropDown && (token ? <DropdownLoggedIn/> : <DropdownLoggedOut/>)}
         </div>
     </div>
 </nav>
