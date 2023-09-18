@@ -31,7 +31,8 @@ export const CartProvider = ({children})=> {
         dispatch({
             type : "REMOVE_FROM_CART",
             payload: {
-                product: updateList
+                products: updateList,
+                total : updatedTotal
             }
         })
 
