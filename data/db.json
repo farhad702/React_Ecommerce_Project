@@ -536,6 +536,12 @@
       "password": "$2a$10$8sS4aRzBpKOQ8JG6PeKog.eUcJi4eAqFFLqJ1KUHQIDDfEYjiBVgC",
       "name": "hola",
       "id": 5
+    },
+    {
+      "email": "abid@gmail.com",
+      "password": "$2a$10$L68M67HXOJX36/qIi6YguuaWjcrn1mXUhDULgVykq8NcP5WYyU8.e",
+      "name": "abid",
+      "id": 6
     }
   ]
 }

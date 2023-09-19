@@ -5,6 +5,7 @@ import { register } from '../services';
 export const Register = () => {
 
     const navigate = useNavigate();
+    
     async function handleRegister(event){
         event.preventDefault();
         const authDetail = {
