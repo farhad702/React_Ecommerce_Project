@@ -1,10 +1,27 @@
+import { useEffect, useState } from "react";
 import { DashboardCard } from "./components/DashboardCard";
 import { DashboardEmpty } from "./components/DashboardEmpty"
 
 
 export const DashboardPage = () => {
+    const[orders, setOrders] = useState([]);
 
-    const orders = [];
+    const token = JSON.parse(sessionStorage.getItem("token"));
+    const cbid = JSON.parse(sessionStorage.getItem("cbid"));
+
+    useEffect(()=>{
+        async function fetchOrders(){
+            const response = await fetch(`http://localhost:8000/660/orders?user.id=${cbid}`,{
+                method: "GET",
+                headers: { "content-type" :  "application/json", Authorization: `Bearer ${token}`}
+            });
+            const data = await response.json();
+            setOrders(data);
+        }
+        fetchOrders();
+
+    },[]);
+
   return (
     <main>
     <section>
@@ -18,7 +35,7 @@ export const DashboardPage = () => {
     </section>
 
     <section>
-        {!orders.length === 0 && <DashboardEmpty/>}
+        {!orders.length  && <DashboardEmpty/>}
      
     </section>
 
