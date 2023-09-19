@@ -28,12 +28,12 @@ export async function register(authDetail){
         }
     const response = await fetch("http://localhost:8000/register",requestOptions);
     const data= await response.json();
-    data.accessToken ? Navigate("/products") : toast.error(data);
 
     if(data.accessToken){
     sessionStorage.setItem("token",JSON.stringify(data.accessToken));
     sessionStorage.setItem("cbid",JSON.stringify(data.user.id));
     }
+    return data;
 }
 
 export function logout(){
