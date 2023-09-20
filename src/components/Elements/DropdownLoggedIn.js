@@ -1,6 +1,7 @@
 import { Link,useNavigate } from "react-router-dom";
 import { getUser, logout } from "..//../services";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export const DropdownLoggedIn = ({setDropDown}) => {
     const navigate = useNavigate();
@@ -8,8 +9,16 @@ export const DropdownLoggedIn = ({setDropDown}) => {
 
     useEffect(()=>{
         async function fetchData(){
-            const data = await getUser();
+            try {
+                const data = await getUser();
             data.email ? setUser(data) : handleLogout();
+            }catch(error){
+                toast.error(error.message,{
+                    closeButton:true,
+                    position:"bottom-center"
+                  });
+            }
+            
         }
         fetchData();
     },[]);
